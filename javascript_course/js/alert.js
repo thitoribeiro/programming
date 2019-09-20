@@ -1,1 +1,1 @@
-window.alert('My first message!')
+window.alert('It is a pleasure to meet you, ' + name + '!')
