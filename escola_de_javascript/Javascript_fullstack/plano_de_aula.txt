@@ -1,0 +1,81 @@
+Semana 1
+Dia 1
+Introdução a Web
+Seja bem vindo(a) ao módulo Introdução a Web
+O que é a Web e como ela funciona
+Desenvolvedor Frontend, Backend e Full Stack
+Dominando o HTML5
+Objetivos
+Conhecendo-o-HTML
+Links para a documentação do HTML
+Estrutura de uma página Web
+Tags básicas do HTML
+Listas no HTML
+Exercício Criando uma lista
+Dia 2
+Dominando o HTML5
+Resolução Criando uma lista
+Organizando nosso código com Divs e Span
+Atributos HTML
+guia-de-galaxias
+Dia 3
+Dominando o HTML5
+resolução guia de galaxias
+Criando Tabelas
+exercício Criando sua primeira Tabela
+resolução criando sua primeira tabela
+Conhecendo os Forms
+Dia 4
+Dominando o HTML5
+Criando um form para pesquisar no Google
+Validação de forms
+Aprofundando nos Inputs
+Criando seu primeiro Form
+Resolução Criando seu primeiro Form
+Dia 5
+Dominando o HTML5
+Criando um form para pesquisar no Google
+Validação de forms
+Aprofundando nos Inputs
+Criando seu primeiro Form
+Resolução Criando seu primeiro Form
+
+Semana 2
+Dia 1
+Dominando o CSS
+Objetivos deste módulo
+Básico do CSS
+Primeiro CSS
+Cores no CSS
+Background e Borders
+Seletores
+Inspetor do Chrome
+Dia 2
+Dominando o CSS
+Seletores mais avançados
+Especificidade
+Herança
+Exercício: Recriando um site com CSS #1
+Resolução: Recriando um site com CSS #1
+Texto e Fontes
+Dia 3
+Dominando o CSS
+Usando o Google Fonts
+Box Model
+Exercício: Recriando um site com CSS #2
+Resolução: Recriando um site com CSS #2
+Bulma
+Objetivos deste módulo
+O que é o Bulma?
+Dia 4
+Bulma
+Adicionando o Bulma ao seu projeto
+Conhecendo os components
+Barra de navegação e footer
+Aplicando Responsividade
+Dia 5
+Bulma
+Exercício: Criando um Portfólio com Bulma
+Resolução: Criando um Portfólio com Bulma (Parte 1)
+Resolução: Criando um Portfólio com Bulma (Parte 2)
+Resolução: Criando um Portfólio com Bulma (Parte 3)
