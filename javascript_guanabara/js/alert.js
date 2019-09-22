@@ -1,0 +1,1 @@
+window.alert('It is a pleasure to meet you, ' + name + '!')

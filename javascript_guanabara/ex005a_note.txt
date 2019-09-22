@@ -1,0 +1,6 @@
+//Selecionando elementos
+
+por Marca   = getElementsByTagName()
+por ID      = getElementsById()
+por Nome    = getElementsByName()
+por Classe  = getElementByClassName() 
