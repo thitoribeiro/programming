@@ -1,0 +1,16 @@
+//Operadores aritméticos
+
++ = soma
+- = subtração
+* = multiplicação
+/ = divisão
+% = resto da divisao inteira
+** = potência
+
+----------------------------------
+
+//Ordem de procedência
+
+()
+**
+* / %

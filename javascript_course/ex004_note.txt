@@ -1,0 +1,23 @@
+//Converter para duas casas decimais
+n1.toFixed(2)
+'1545.50'
+
+//Trocar o ponto por vírgula
+n1.toFixed(2).replace('.', ',')
+'1545,50'
+
+//Formartar para valor monetário real brasileiro
+n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+'R$ 1,545.50'
+
+//Formartar para valor monetário dólar americano
+n1.toLocaleString('pt-BR', {style: 'currency', currency: 'USD'})
+'US$ 1,545.50'
+
+//Formartar para valor monetário euro
+n1.toLocaleString('pt-BR', {style: 'currency', currency: 'EUR'})
+'€ 1,545.50'
+
+//Formartar para valor monetário euro com troca de vírgula por ponto
+n1.toLocaleString('pt-BR', {style: 'currency', currency: 'EUR'}).replace(',', '.')
+'€ 1.545.50'
