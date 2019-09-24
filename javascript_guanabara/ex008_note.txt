@@ -1,0 +1,14 @@
+//Condition
+
+if (condition) {
+    TRUE
+} else {
+    FALSE
+}
+
+//Simple condition
+
+if (condition) {
+    TRUE
+}
+
