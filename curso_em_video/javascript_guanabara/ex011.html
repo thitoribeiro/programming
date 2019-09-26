@@ -16,11 +16,10 @@
 </body>
 <script>
     function enter() {
-        var country = window.document.querySelector('input#txt1')
+        var country = window.document.querySelector('input#txt1').value
         var msg = window.document.querySelector('div#msg')
-        //var res = String(country.value)
         msg.innerHTML += `<p>You are from <strong>${country}</strong></p>`
-        if (country == "Brazil") {
+        if (country == 'Brazil') {
             msg.innerHTML = 'So you are brazilian!'
         } else {
             msg.innerHTML = 'So you are foreign!</p>'
