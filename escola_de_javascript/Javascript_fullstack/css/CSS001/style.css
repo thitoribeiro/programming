@@ -2,9 +2,10 @@ h1{
     color: purple;
     font-size: 50pt;
     background-color: black;
-    border-color: yellow;
+    /*border-color: yellow;
     border-width: 3px;
-    border-style: solid;
+    border-style: solid;*/
+    border: 2px solid yellow; 
 }
 
 h4{
