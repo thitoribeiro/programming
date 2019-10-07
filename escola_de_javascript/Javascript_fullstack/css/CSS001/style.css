@@ -1,7 +1,10 @@
 h1{
     color: purple;
     font-size: 50pt;
-    background-color: white;
+    background-color: black;
+    border-color: yellow;
+    border-width: 3px;
+    border-style: solid;
 }
 
 h4{
