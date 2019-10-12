@@ -1,6 +1,11 @@
 h1{
     color: purple;
     font-size: 50pt;
+    background-color: black;
+    /*border-color: yellow;
+    border-width: 3px;
+    border-style: solid;*/
+    border: 2px solid yellow; 
 }
 
 h4{
@@ -9,4 +14,10 @@ h4{
 
 li{
     color: green;
+}
+
+body {
+    background-image: url('https://www.spacex.com/sites/spacex/files/amos17_v2.jpg');
+    background-repeat: no-reapet;
+    background-size: cover;
 }
