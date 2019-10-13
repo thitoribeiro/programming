@@ -1,11 +1,12 @@
 p {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat','Arial', sans-serif;
     font-size: 20px;
     font-weight: 600;
     line-height: 2;
 }
 
 h1 {
-    text-align: center;
-    text-decoration: underline;
+    /*text-align: center;
+    text-decoration: underline;*/
+    font-family: 'Geostar', cursive;
 }
