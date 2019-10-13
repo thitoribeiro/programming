@@ -9,4 +9,7 @@ h1 {
     /*text-align: center;
     text-decoration: underline;*/
     font-family: 'Geostar', cursive;
+    margin: 45px auto 200px auto;
+    width: 20%;
+    border: 2px solid;
 }
