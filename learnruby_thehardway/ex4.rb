@@ -1,7 +1,7 @@
 # number of cars
 cars = 100
 # number of seats per car
-space_in_a_car = 4.0
+space_in_a_car = 4
 # number of drivers
 drivers = 30
 # number of people needing a ride
