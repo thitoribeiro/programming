@@ -15,4 +15,6 @@ console.log(string1.slice(-5, -1))
 console.log(string1.substring(string1.length -5, string1.length -1));
 */
 
-console.log(string1.split(' ', 3));
+console.log(string1.split());
+console.log(string1.toUpperCase());
+console.log(string1.toLowerCase());
