@@ -6,19 +6,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Modelo</title>
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.min.css">
 </head>
 
 <body>
-
+    
   <section class="container">
-    <h1>Lorem ipsum dolor sit amet</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-      Repellendus nisi explicabo saepe voluptatibus consequuntur et corporis
-      maxime quos, doloribus vitae voluptatum quisquam necessitatibus
-      pariatur veritatis exercitationem beatae officiis suscipit Ea!
-    </p>
+    <h1 id="title2" class="title" name="tittle2">Calcule seu IMC</h1>
+    <table class="table is-striped">
+        <thead>
+            <th>IMC</th>
+            <th>Resultado</th>
+        </thead>
+        
+    </table>
+    <h1 id="title2" class="title" name="tittle2">Calcule seu IMC</h1>
+    <div class="field">
+        <label class="label">Peso</label>
+        <div class="control">
+            <input id="inputPeso" class="input" type="text" name="inputPeso" placeholder="72kg">
+        </div>
+      </div>
+      
+      <div class="field">
+        <label class="label">Altura</label>
+        <div class="control">
+          <input id="inputAltura" class="input" type="text" name="inputAltura" placeholder="1.75m">
+        </div>
+      </div>
+      <div class="field is-grouped">
+        <p class="control">
+            <button class="button is-link is-focused">Calcular</button>
+        </p>
+      </div>
   </section>
 
   <script src="./assets/js/main.js"></script>
