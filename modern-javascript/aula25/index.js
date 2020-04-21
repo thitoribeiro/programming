@@ -9,3 +9,5 @@ if (numero >= 0 && numero <=5 ){
 } else {
     console.log('O número não está entre 0 e 11.');
 }
+
+console.log('...Aqui vem o resto do código.')
