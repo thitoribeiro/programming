@@ -1,4 +1,4 @@
-
+//if else
 var a = 6;
 var b = 6;
 
@@ -30,19 +30,61 @@ if (dia === 1) {
   console.log("Inválido");
 }
 
-
+//switch case
 var dia = 3;
 
 switch (dia) {
-  case 1: r = 'Domingo'; break;
-  case 2: r = 'Segunda'; break;
-  case 3: r = 'Terça'; break;
-  case 4: r = 'Quarta'; break;
-  case 5: r = 'Quinta'; break;
-  case 6: r = 'Sexta'; break;
-  case 7: r = 'Sábado'; break;
+  case 1:
+    r = "Domingo";
+    break;
+  case 2:
+    r = "Segunda";
+    break;
+  case 3:
+    r = "Terça";
+    break;
+  case 4:
+    r = "Quarta";
+    break;
+  case 5:
+    r = "Quinta";
+    break;
+  case 6:
+    r = "Sexta";
+    break;
+  case 7:
+    r = "Sábado";
+    break;
 
-  default: r = 'Inválido';
+  default:
+    r = "Inválido";
 }
 
 console.log(r);
+
+//operador ternário
+a = 8;
+b = 7;
+
+var resposta = a > b ? "maior" : a < b ? "menor" : "igual";
+console.log(resposta);
+
+var dia = 7
+var diaSemana = 
+  dia === 1
+    ? "Domingo"
+    : dia === 2
+    ? "Segunda"
+    : dia === 3
+    ? "Terça"
+    : dia === 4
+    ? "Quarta"
+    : dia === 5
+    ? "Quinta"
+    : dia === 6
+    ? "Sexta"
+    : dia === 7
+    ? "Sábado"
+    : "Inválido";
+
+    console.log(diaSemana);
