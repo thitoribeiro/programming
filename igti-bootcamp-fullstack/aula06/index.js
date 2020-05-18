@@ -1,4 +1,4 @@
-//if e if else
+//if e if else =================================
 var a = 6;
 var b = 6;
 
@@ -30,7 +30,7 @@ if (dia === 1) {
   console.log("Inválido");
 }
 
-//switch case
+//switch case ======================================
 var dia = 3;
 
 switch (dia) {
@@ -62,7 +62,7 @@ switch (dia) {
 
 console.log(r);
 
-//operador ternário
+//operador ternário ========================================
 a = 8;
 b = 7;
 
@@ -89,7 +89,7 @@ var diaSemana =
 
     console.log(diaSemana);
 
-    // Somatório com while
+    // Somatório com while =====================================
     
     var numeroAtual = 1;
     var somatorio = 0;
@@ -101,7 +101,7 @@ var diaSemana =
 
     console.log('A soma é ' + somatorio);
 
-    // Somatorio com do while
+    // Somatorio com do while =======================================
 
     var numeroAtual = 1;
     var somatorio = 0;
@@ -113,7 +113,7 @@ var diaSemana =
 
     console.log('A soma é ' + somatorio);
     
-    // for
+    // for ============================================================
 
     somatorio = 0;
     for(numeroAtual = 1; numeroAtual <= 10; numeroAtual++) {
