@@ -1,4 +1,4 @@
-//if else
+//if e if else
 var a = 6;
 var b = 6;
 
@@ -88,3 +88,36 @@ var diaSemana =
     : "Inválido";
 
     console.log(diaSemana);
+
+    // Somatório com while
+    
+    var numeroAtual = 1;
+    var somatorio = 0;
+
+    while (numeroAtual <= 10) {
+      somatorio += numeroAtual;
+      numeroAtual++;
+    }
+
+    console.log('A soma é ' + somatorio);
+
+    // Somatorio com do while
+
+    var numeroAtual = 1;
+    var somatorio = 0;
+
+    do {
+      somatorio += numeroAtual;
+      numeroAtual++;
+    } while (numeroAtual <= 10);
+
+    console.log('A soma é ' + somatorio);
+    
+    // for
+
+    somatorio = 0;
+    for(numeroAtual = 1; numeroAtual <= 10; numeroAtual++) {
+      somatorio += numeroAtual;
+    }
+
+    console.log('A soma é ' + somatorio);
