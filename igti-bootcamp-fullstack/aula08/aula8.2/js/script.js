@@ -24,7 +24,8 @@ function preventSubmit(event) {
   event.preventDefault();
 
   var nameInput = document.querySelector('#nameInput');
-  alert(nameInput.value + ' cadastrado com sucesso!');
+  console.log(nameInput.value);
+  alert(nameInput.value + ' cadastrado com sucesso!'); 
 }
 
 
