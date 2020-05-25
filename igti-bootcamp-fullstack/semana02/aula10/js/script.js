@@ -64,4 +64,21 @@ console.log(sum2(2, 3));
 console.log(sum3(2, 3));
 console.log(sum4(2, 3));
 
+//template literals
+
+const nome = 'Thito';
+const segundoNome = 'Rodrigo';
+const sobreNome = 'Ribeiro';
+const text1 = 'Meu nome é ' + nome + ' ' + segundoNome + ' ' + sobreNome;
+const text2 = `Meu nome é ${nome} ${segundoNome} ${sobreNome}`;
+
+console.log(text1);
+console.log(text2);
+
+//default parameters
+
+const sum5 = (a = 10, b = 10) => a + b;
+console.log(sum5(2));
+console.log(sum5(2, 8));
+
 
