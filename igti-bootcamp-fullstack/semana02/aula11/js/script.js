@@ -55,3 +55,10 @@ function doReduce() {
 
   // console.log(sumAges)
 }
+
+function doFind() {
+  const found = people.results.find(person => {
+    return person.location.state === 'Minas Gerais'
+  });
+  console.log(found);
+}
