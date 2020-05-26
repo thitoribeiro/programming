@@ -4,6 +4,7 @@ window.addEventListener("load", () => {
   doForEach();
   doReduce();
   doFind();
+  doSome();
 });
 //método imutável map===============================================
 function doMap() {
@@ -55,10 +56,17 @@ function doReduce() {
 
   // console.log(sumAges)
 }
-
+//método find
 function doFind() {
   const found = people.results.find(person => {
     return person.location.state === 'Minas Gerais'
+  });
+  console.log(found);
+}
+//método some
+function doSome(){
+  const found = people.results.some(person => {
+    return person.location.state === 'Amazonas';
   });
   console.log(found);
 }
