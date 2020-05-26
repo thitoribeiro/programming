@@ -2,6 +2,8 @@ window.addEventListener("load", () => {
   doMap();
   doFilter();
   doForEach();
+  doReduce();
+  doFind();
 });
 //método imutável map===============================================
 function doMap() {
@@ -36,4 +38,20 @@ function doForEach() {
   });
   console.log(mappedPeople);
 }
-//método
+//método reduce
+function doReduce() {
+  const totalAges = people.results.reduce((accumulator, current) => {
+    return accumulator + current.dob.age;
+  }, 0);
+  console.log(totalAges);
+
+  let sumAges = 0;
+
+  //Sem método reduce, utilizando for
+  // for(let i = 0; i < people.results.length; i++){
+  //   var current = people.results[i];
+  //   sumAges += current.dob.age;
+  // }
+
+  // console.log(sumAges)
+}
