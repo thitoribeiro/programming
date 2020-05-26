@@ -6,6 +6,7 @@ window.addEventListener("load", () => {
   doFind();
   doSome();
   doEvery();
+  doSort();
 });
 //método imutável map===============================================
 function doMap() {
@@ -13,7 +14,7 @@ function doMap() {
     return {
       name: person.name,
       email: person.email,
-      gender: person.gender
+      gender: person.gender,
     };
   });
 
@@ -59,22 +60,33 @@ function doReduce() {
 }
 //método find
 function doFind() {
-  const found = people.results.find(person => {
-    return person.location.state === 'Minas Gerais'
+  const found = people.results.find((person) => {
+    return person.location.state === "Minas Gerais";
   });
   console.log(found);
 }
 //método some
-function doSome(){
-  const found = people.results.some(person => {
-    return person.location.state === 'Amazonas';
+function doSome() {
+  const found = people.results.some((person) => {
+    return person.location.state === "Amazonas";
   });
   console.log(found);
 }
 //método every
 function doEvery() {
-  const every = people.results.every(person => {
-    return person.nat === 'BR';
+  const every = people.results.every((person) => {
+    return person.nat === "BR";
   });
   console.log(every);
+}
+//método sort
+function doSort() {
+  const mappedNames = people.results
+    .map((person) => {
+      return person.name.first;
+    })
+    .filter((person) => person.startsWith("A"))
+    .sort();
+
+  console.log(mappedNames);
 }
