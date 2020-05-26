@@ -5,6 +5,7 @@ window.addEventListener("load", () => {
   doReduce();
   doFind();
   doSome();
+  doEvery();
 });
 //método imutável map===============================================
 function doMap() {
@@ -69,4 +70,11 @@ function doSome(){
     return person.location.state === 'Amazonas';
   });
   console.log(found);
+}
+//método every
+function doEvery() {
+  const every = people.results.every(person => {
+    return person.nat === 'BR';
+  });
+  console.log(every);
 }
