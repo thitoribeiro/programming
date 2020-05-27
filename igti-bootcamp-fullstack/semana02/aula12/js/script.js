@@ -1,6 +1,7 @@
 window.addEventListener("load", () => {
   doSpread();
   doRest();
+  doDestructuring();
 });
 //spread
 function doSpread() {
@@ -23,3 +24,19 @@ function doRest() {
 function infiniteSum(...numbers) {
   return numbers.reduce((acc, curr) => acc + curr, 0);
 }
+//destructuring
+function doDestructuring() {
+  const first = people.results[0];
+
+  //forma repetitiva sem desestruturacao
+  //const username = first.login.username;
+  //const password = first.login.password;
+
+  //usando destructuring
+  const {username, password} = first.login;
+
+  console.log(username);
+  console.log(password);
+}
+
+
