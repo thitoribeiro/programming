@@ -1,5 +1,18 @@
 window.addEventListener("load", function () {
-  fetch("https://api.github.com/users/thitoribeiro")
+  
+  doFetch();
+  doFetchAsync();
+
+  divisionPromise(12, 6).then((result) => {
+    this.console.log(result);
+  });
+
+  executeDivisionPromise();
+  executeDivisionPromiseAsyncAwait();
+});
+
+function doFetch() {
+    fetch("https://api.github.com/users/thitoribeiro")
     .then((res) => {
       res.json().then((data) => {
         showData(data);
@@ -8,19 +21,13 @@ window.addEventListener("load", function () {
     .catch((error) => {
       console.log("Erro na requisicao");
     });
+}
 
-  divisionPromise(12, 6).then((result) => {
-    this.console.log(result);
-  });
-
-  divisionPromise(12, 0)
-    .then((result) => {
-      this.console.log(result);
-    })
-    .catch((errorMessage) => {
-      this.console.log("Falha na divisao " + errorMessage);
-    });
-});
+async function doFetchAsync() {
+  const res = await fetch("https://api.github.com/users/thitoribeiro");
+  const json = await res.json();
+  console.log(json);
+}
 
 function showData(data) {
   const user = document.querySelector("#user");
@@ -36,3 +43,18 @@ function divisionPromise(a, b) {
     resolve(a / b);
   });
 }
+
+function executeDivisionPromise() {
+  divisionPromise(12, 0)
+    .then((result) => {
+      this.console.log(result);
+    })
+    .catch((errorMessage) => {
+      this.console.log("Falha na divisao " + errorMessage);
+    });
+}
+
+async function executeDivisionPromiseAsyncAwait() {
+    const division = await divisionPromise(12, 2);
+    console.log(division);
+  }
