@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Trabalho Prático 01 - RGB Range</title>
+  </head>
+  <body>
+    <h1>Trabalho Prático 01 - RGB Range</h1>
+
+    <div class="flex-row" id="divR">
+      <span class="label">(R) Red</span>
+      <input
+        class="range"
+        value="0"
+        type="range"
+        id="inputRangeR"
+        min="0"
+        max="255"
+      />
+      <input class="text" type="text" id="inputTextR" disabled />
+    </div>
+    <div class="flex-row" id="divG">
+      <span class="label">(G) Green</span>
+      <input
+        class="range"
+        value="0"
+        type="range"
+        id="inputRangeG"
+        min="0"
+        max="255"
+      />
+      <input class="text" type="text" id="inputTextG" disabled />
+    </div>
+    <div class="flex-row" id="divB">
+      <span class="label">(B) Blue</span>
+      <input
+        class="range"
+        value="0"
+        type="range"
+        id="inputRangeB"
+        min="0"
+        max="255"
+      />
+      <input class="text" type="text" id="inputTextB" disabled />
+    </div>
+
+    <div class="square" id="divSquare"></div>
+
+    <script src="./js/scritp.js"></script>
+  </body>
+</html>
