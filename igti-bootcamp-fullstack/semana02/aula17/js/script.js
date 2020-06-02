@@ -136,4 +136,27 @@ const totalFavorites = favoriteCountries.reduce((accumulator, current) => {
 }
 
 
-function handleCountryButtons() {}
+function handleCountryButtons() {
+  const countryButtons = Array.from(tabCountries.querySelectorAll('.btn'));
+  const favoriteButtons = Array.from(tabFavorites.querySelectoAll('.btn'));
+
+  countryButtons.forEach(button => {
+    button.addEventListener('click', () => addToFavorites(button.id));
+
+  });
+
+  favoriteButtons.forEach(button => {
+    button.addEventListener('click', () => removeFromFavorites(button.id));
+
+  });
+}
+
+function addFavorites(id) {
+  
+}
+
+function removeFromFavorites(id) {
+  
+}
+
+
