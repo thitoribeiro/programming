@@ -1,29 +1,34 @@
 var express = require("express");
 var fs = require("fs");
+
 var app = express();
 
 app.use(express.json());
 
 app.post("/account", (req, res) => {
-  let params = req.body;
-  console.log("post account");
-
+  let account = req.body;
   fs.readFile("accounts.json", "utf8", (err, data) => {
-    console.log(err);
+    if (!err) {
+      try {
+        let json = JSON.parse(data);
 
-    try {
-      let json = JSON.parse(data);
-      console.log(json);
+        account = { id: json.nextId++, ...account };
+        json.accounts.push(account);
 
-      res.send("post account");
-    } catch (err) {
-      res.send("erro");
+        fs.writeFile("accounts.json", JSON.stringify(json), err => {
+          if (err) {
+            console.log(err);
+          } else {
+            res.end();
+          }
+        });
+      } catch (err) {
+        res.status(400).send({ error: err.message });
+      }
+    } else {
+      res.status(400).send({ error: err.message });
     }
   });
-
-  // fs.appendFile("accounts.json", JSON.stringify(params), err => {
-  //     console.log(err);
-  // });
 });
 
 app.listen(3000, function () {
@@ -42,6 +47,6 @@ app.listen(3000, function () {
     } catch (err) {
         console.log(err);
     }
-    
+
   console.log("API started!");
 });
