@@ -15,9 +15,9 @@ app.post("/account", (req, res) => {
         account = { id: json.nextId++, ...account };
         json.accounts.push(account);
 
-        fs.writeFile("accounts.json", JSON.stringify(json), err => {
+        fs.writeFile("accounts.json", JSON.stringify(json), (err) => {
           if (err) {
-            console.log(err);
+            res.status(400).send({ error: err.message });
           } else {
             res.end();
           }
@@ -31,22 +31,37 @@ app.post("/account", (req, res) => {
   });
 });
 
-app.listen(3000, function () {
-    try {
-        fs.readFile("accounts.json", "utf8", (err, data) => {
-            if (err) {
-                const initialJson = {
-                    nextId: 1,
-                    accounts: []
-                };
-                fs.writeFile("accounts.json", JSON.stringify(initialJson), err => {
-                    console.log(err);
-                });
-            }
-        });
-    } catch (err) {
-        console.log(err);
+app.get("/account", (_, res) => {
+  fs.readFile("accounts.json", "utf8", (err, data) => {
+    if (!err) {
+      let json = JSON.parse(data);
+      delete json.nextId;
+      res.send(json);
+    } else {
+        res.status(400).send({ error: err.message });
     }
+  })
+});
+
+app.listen(3000, function () {
+  try {
+    fs.readFile("accounts.json", "utf8", (err, data) => {
+      if (err) {
+        const initialJson = {
+          nextId: 1,
+          accounts: [],
+        };
+        fs.writeFile("accounts.json", JSON.stringify(initialJson), (err) => {
+          if (err) {
+            console.log(err);
+          }
+          
+        });
+      }
+    });
+  } catch (err) {
+    console.log(err);
+  }
 
   console.log("API started!");
 });
