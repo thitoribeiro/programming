@@ -5,24 +5,21 @@ var fs = require("fs");
 router.post("/", (req, res) => {
   let account = req.body;
   fs.readFile(global.fileName, "utf8", (err, data) => {
-    if (!err) {
-      try {
-        let json = JSON.parse(data);
+    try {
+      if (err) throw err;
 
-        account = { id: json.nextId++, ...account };
-        json.accounts.push(account);
+      let json = JSON.parse(data);
+      account = { id: json.nextId++, ...account };
+      json.accounts.push(account);
 
-        fs.writeFile(global.fileName, JSON.stringify(json), (err) => {
-          if (err) {
-            res.status(400).send({ error: err.message });
-          } else {
-            res.end();
-          }
-        });
-      } catch (err) {
-        res.status(400).send({ error: err.message });
-      }
-    } else {
+      fs.writeFile(global.fileName, JSON.stringify(json), (err) => {
+        if (err) {
+          res.status(400).send({ error: err.message });
+        } else {
+          res.end();
+        }
+      });
+    } catch (err) {
       res.status(400).send({ error: err.message });
     }
   });
@@ -30,34 +27,36 @@ router.post("/", (req, res) => {
 
 router.get("/", (_, res) => {
   fs.readFile(global.fileName, "utf8", (err, data) => {
-    if (!err) {
+    try {
+      if (err) throw err;
       let json = JSON.parse(data);
       delete json.nextId;
       res.send(json);
-    } else {
+    } catch (err) {
       res.status(400).send({ error: err.message });
     }
   });
 });
 
 router.get("/:id", (req, res) => {
-    //req.params.id
-    fs.readFile(global.fileName, "utf8", (err, data) => {
-        if (!err) {
-            let json = JSON.parse(data);
-            const account = json.accounts.find(account => account.id === parseInt(req.params.id), 10);
-            if (account) {
-                res.send(account);
-            } else {
-                res.end();
-            }
-           
-          } else {
-            res.status(400).send({ error: err.message });
-          }
+  fs.readFile(global.fileName, "utf8", (err, data) => {
+    try {
+      if (err) throw err;
 
-    });
-    
+      let json = JSON.parse(data);
+      const account = json.accounts.find(
+        (account) => account.id === parseInt(req.params.id),
+        10
+      );
+      if (account) {
+        res.send(account);
+      } else {
+        res.end();
+      }
+    } catch (err) {
+      res.status(400).send({ error: err.message });
+    }
+  });
 });
 
 module.exports = router;
