@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-
-import CountryList from './components/Countries/CountryList';
-
-import css from './app.module.css';
-import { getTotalPopulation } from './helpers/reduce-helpers';
-import { formatNumber } from './helpers/format-helpers';
+import Countries from './components/countries/Countries';
+import Header from './components/header/Header';
 
 export default class App extends Component {
   constructor() {
@@ -12,11 +8,9 @@ export default class App extends Component {
 
     this.state = {
       allCountries: [],
-      currentCountries: [],
+      filteredCountries: [],
+      filteredPopulation: 0,
       filter: '',
-      countryCount: 0,
-      totalPopulation: 0,
-      formattedPopulation: '0',
     };
   }
 
@@ -24,80 +18,76 @@ export default class App extends Component {
     const res = await fetch('https://restcountries.eu/rest/v2/all');
     const json = await res.json();
 
-    const countries = json.map((item) => {
-      const { name, flag, numericCode, population, area } = item;
-
+    const allCountries = json.map(({ name, numericCode, flag, population }) => {
       return {
         id: numericCode,
-        nameFilter: name.toLowerCase(),
         name,
+        filterName: name.toLowerCase(),
         flag,
         population,
-        area,
       };
     });
 
-    const totalPopulation = getTotalPopulation(countries);
+    const filteredPopulation = this.calculateTotalPopulationFrom(allCountries);
 
     this.setState({
-      allCountries: countries,
-      countries,
-      countryCount: countries.length,
-      totalPopulation,
-      formattedPopulation: formatNumber(totalPopulation),
+      allCountries,
+      filteredCountries: Object.assign([], allCountries),
+      filteredPopulation,
     });
   }
 
-  handleFilter = (event) => {
-    const filterText = event.target.value;
-    const filterTextLowerCase = filterText.toLowerCase();
+  calculateTotalPopulationFrom = (countries) => {
+    const totalPopulation = countries.reduce((accumulator, current) => {
+      return accumulator + current.population;
+    }, 0);
 
-    this.setState({ filter: filterText });
+    return totalPopulation;
+  };
 
-    let { countries, allCountries } = this.state;
-
-    countries = allCountries.filter((country) => {
-      return country.nameFilter.includes(filterTextLowerCase);
+  handleChangeFilter = (newText) => {
+    this.setState({
+      filter: newText,
     });
 
-    const totalPopulation = getTotalPopulation(countries);
+    const filterLowerCase = newText.toLowerCase();
+
+    const filteredCountries = this.state.allCountries.filter((country) => {
+      return country.filterName.includes(filterLowerCase);
+    });
+
+    const filteredPopulation = this.calculateTotalPopulationFrom(
+      filteredCountries
+    );
 
     this.setState({
-      countries,
-      countryCount: countries.length,
-      totalPopulation,
-      formattedPopulation: formatNumber(totalPopulation),
+      filteredCountries,
+      filteredPopulation,
     });
   };
 
   render() {
-    const { countries, filter, countryCount, formattedPopulation } = this.state;
+    const { filteredCountries, filter, filteredPopulation } = this.state;
 
     return (
-      <div className={css.mainContainer}>
-        <div className={css.flexRow}>
-          <div className="input-field">
-            <input
-              placeholder="Filtro"
-              type="text"
-              value={filter}
-              onChange={this.handleFilter}
-            />
-          </div>
+      <div className="container">
+        <h1 style={styles.centeredTitle}>React Countries</h1>
 
-          <div className={css.leftRightSpace}>
-            | Quantidade de países: <strong>{countryCount}</strong>
-          </div>
+        <Header
+          filter={filter}
+          countryCount={filteredCountries.length}
+          totalPopulation={filteredPopulation}
+          onChangeFilter={this.handleChangeFilter}
+        />
 
-          <div className={css.leftRightSpace}>
-            | População total: <strong>{formattedPopulation}</strong>
-          </div>
-        </div>
-        <hr />
-        <div>
-          <CountryList data={countries} />
-        </div>
+        <Countries countries={filteredCountries} />
       </div>
     );
   }
 }
+
+const styles = {
+  centeredTitle: {
+    textAlign: 'center',
+  },
+};
