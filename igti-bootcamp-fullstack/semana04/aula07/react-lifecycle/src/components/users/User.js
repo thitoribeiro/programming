@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import css from './user.module.css';
 
-export default class User extends Component {
-  render() {
-    const { login, name, picture } = this.props.user;
+export default function User(props) {
+    const { login, name, picture } = props.user;
 
     return (
       <div className={css.flexRow}>
@@ -13,4 +12,3 @@ export default class User extends Component {
       </div>
     );
   }
-}
